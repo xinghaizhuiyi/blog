@@ -1,17 +1,15 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <router-link to="/HelloWord">Go to HelloWord</router-link>
+    <router-link to="/test">Go to test</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  data:{
-    abc:'123'
-  }
-}
+  name: "App",
+};
 </script>
 
 <style>
