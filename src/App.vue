@@ -10,7 +10,6 @@ export default {
   name: 'App',
   data:{
     abc:'123'
-
   }
 }
 </script>
