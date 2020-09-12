@@ -1,13 +1,17 @@
 import Vue from 'vue'
-Vue.config.devtools = true
 import App from './App.vue'
 import router from './router'
+import createStore from './store'
+import Vuex from 'vuex'
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
+Vue.config.devtools = true
 
+const store=createStore()
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
-  components: { App }
+  store,
+  render: h =>h(App)
 }).$mount('#app')

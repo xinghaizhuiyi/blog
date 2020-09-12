@@ -1,24 +1,44 @@
 <template>
   <div id="app">
-    <router-link to="/HelloWord">Go to HelloWord</router-link>
-    <router-link to="/test">Go to test</router-link>
-    <router-view></router-view>
+    <BaseSidebar></BaseSidebar>
   </div>
 </template>
 
 <script>
+import BaseSidebar from "./common/BaseSidebar";
+
 export default {
   name: "App",
+  components: {
+    BaseSidebar,
+  },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 2000px;
 }
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+
 </style>
