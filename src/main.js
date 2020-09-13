@@ -2,7 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import createStore from './store'
+import animated from 'animate.css'
 import Vuex from 'vuex'
+Vue.use(animated)
 Vue.use(Vuex)
 
 Vue.config.productionTip = false

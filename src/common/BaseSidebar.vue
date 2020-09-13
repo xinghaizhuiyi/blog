@@ -1,7 +1,7 @@
 <template>
   <div>
-    <SidebarIcon v-if="isshow"></SidebarIcon>
-    <Sidebar v-else></Sidebar>
+    <Sidebar-icon v-if="isshow"></Sidebar-icon>
+    <Sidebar v-if="!isshow"></Sidebar>
   </div>
 </template>
 
@@ -13,14 +13,9 @@ export default {
     SidebarIcon,
     Sidebar,
   },
-  data() {
-    return {
-      bace: "true",
-    };
-  },
   computed: {
     isshow() {
-      return this.$store.state.SidebarShow.isshow
+      return this.$store.state.SidebarShow.isshow;
     },
   },
 };

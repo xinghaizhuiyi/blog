@@ -24,9 +24,10 @@ export default {
 <style scoped>
 .SidebarIcon {
   position: fixed;
-  margin-left: 20px;
-  margin-top: 10px;
+  margin-left: 2em;
+  margin-top: 1em;
   border: 2px solid black;
+  border-radius:12px;
   z-index: 2;
 }
 
