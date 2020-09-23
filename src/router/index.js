@@ -5,17 +5,19 @@ import HelloWorld from '../components/HelloWorld'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
-    routes:[
-        {
-            path:'/HelloWord',
-            name:'HelloWorld',
-            component:HelloWorld
-        },
-        {
-            path:'/test',
-            name:'test',
-            component:test
-        }
-    ]
-})
+export default function createRouter() {
+    return new VueRouter({
+        routes: [
+            {
+                path: '/tag/:blogtag',
+                name: 'HelloWorld',
+                component: HelloWorld
+            },
+            {
+                path: '/test/:blogtag',
+                name: 'test',
+                component: test
+            }
+        ]
+    })
+}
