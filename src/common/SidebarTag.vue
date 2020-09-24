@@ -1,20 +1,22 @@
 <template>
   <div class="SidebarTag" v-if="tagShow">
-    <span>随笔分类</span>
+    <span class="taghead">随笔分类</span>
     <ul>
       <li
-        href=""
+        class="taglist"
         v-for="item in items"
         :key="item.tag"
         @click="goToTag(item.tag)"
       >
-        {{ item.tag }}({{ item.quantity }})
+        <svg-tag></svg-tag> {{ item.tag }}({{ item.quantity }})
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import SvgTag from "./svg/SvgTag";
+
 export default {
   created() {
     this.axios
@@ -27,6 +29,9 @@ export default {
       .catch((err) => {
         console.log(err);
       });
+  },
+  components: {
+    SvgTag,
   },
   data() {
     return {
@@ -46,4 +51,19 @@ export default {
 </script>
 
 <style scoped>
+.taghead{
+  display: block;
+  text-align: center;
+}
+.taglist {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin-left: 1em;
+}
+.taglist:hover {
+  color: red;
+  transition: 0.2s;
+  cursor: pointer;
+}
 </style>

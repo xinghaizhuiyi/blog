@@ -1,7 +1,7 @@
 <template>
   <button class="SidebarIcon" @click='showClick'>
     <div class="flexbox">
-      <SvgCategory class="svg"></SvgCategory>
+      <svg-category class="svg"></svg-category>
       <p class="p">MENU</p>
     </div>
   </button>

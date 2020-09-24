@@ -13,7 +13,7 @@ export default {
 
 <style>
 #app {
-  height: 2000px;
+
 }
 body,
 p,
