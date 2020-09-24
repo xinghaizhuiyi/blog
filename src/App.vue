@@ -12,9 +12,6 @@ export default {
 </script>
 
 <style>
-#app {
-
-}
 body,
 p,
 h1,

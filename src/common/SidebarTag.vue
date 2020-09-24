@@ -56,7 +56,6 @@ export default {
   text-align: center;
 }
 .taglist {
-  font-weight: 700;
   display: flex;
   align-items: center;
   margin-left: 1em;
