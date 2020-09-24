@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import test from '../components/test.vue'
-import HelloWorld from '../components/HelloWorld'
+import tag from '../components/tag.vue'
+import Home from '../components/Home'
+import Blog from '../components/Blog'
 
 Vue.use(VueRouter)
 
@@ -9,15 +10,20 @@ export default function createRouter() {
     return new VueRouter({
         routes: [
             {
-                path: '/tag/:blogtag',
-                name: 'HelloWorld',
-                component: HelloWorld
+                path: '/',
+                name: 'Home',
+                component: Home
             },
             {
-                path: '/test/:blogtag',
-                name: 'test',
-                component: test
-            }
+                path: '/tag/:blogtag',
+                name: 'tag',
+                component: tag
+            },
+            {
+                path: '/blog/:bowen',
+                name: 'Blog',
+                component: Blog
+            },
         ]
     })
 }

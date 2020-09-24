@@ -1,3 +1,4 @@
+//根据tag显示相应文章
 <template>
   <div>
     <h2>{{ msg }}{{ this.$route.params.blogtag }}</h2>
@@ -6,14 +7,13 @@
 
 <script>
 export default {
-  name: "test",
+  name: "tag",
   created() {
     this.axios
-      .get("http://localhost:3000/tag"+this.$route.params.blogtag)
+      .get("http://localhost:3000/tag/"+this.$route.params.blogtag)
       .then((res) => {
         console.log(res.data);
-        this.items = res.data.data;
-        this.tagShow = res.data.status;
+        this.items = res.data;
       })
       .catch((err) => {
         console.log(err);
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       msg: "test",
+      items:""
     };
   },
 };

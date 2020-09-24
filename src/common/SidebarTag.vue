@@ -1,10 +1,16 @@
 <template>
   <div class="SidebarTag" v-if="tagShow">
     <span>随笔分类</span>
-    <li href="" v-for="item in items" :key="item.tag" @click="goToTag(item.tag)">
-      {{ item.tag }}({{ item.quantity }})
-    </li>
-    <router-view></router-view>
+    <ul>
+      <li
+        href=""
+        v-for="item in items"
+        :key="item.tag"
+        @click="goToTag(item.tag)"
+      >
+        {{ item.tag }}({{ item.quantity }})
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -31,10 +37,9 @@ export default {
   methods: {
     goToTag(tag) {
       this.$router.push({
-        name:'test',
-        params:{ blogtag: tag}
-      })
-
+        name: "tag",
+        params: { blogtag: tag },
+      });
     },
   },
 };

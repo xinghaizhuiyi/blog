@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <BaseSidebar></BaseSidebar>
-     <router-view></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import BaseSidebar from "./common/BaseSidebar";
-
 export default {
   name: "App",
-  components: {
-    BaseSidebar,
-  },
+  components: {},
 };
 </script>
 
@@ -41,5 +36,4 @@ fieldset,
 img {
   border: 0;
 }
-
 </style>
