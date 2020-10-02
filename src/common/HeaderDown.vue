@@ -1,11 +1,7 @@
 //首屏的翻页键
 <template>
-  <div class="DownBox">
-    <div @click="showClick" class="HeaderDown">
-      <div >
-        <Svg-down class="svg"></Svg-down>
-      </div>
-    </div>
+  <div @click="showClick" class="HeaderDown">
+    <Svg-down class="svg"></Svg-down>
   </div>
 </template>
 
@@ -24,17 +20,13 @@ export default {
 </script>
 
 <style scoped>
-.DownBox {
-  display: flex;
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-}
 .HeaderDown {
-  display: inline-block;
-  margin: auto auto 0;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+  bottom: 0;
+  z-index: 1;
   width: 100px;
   height: 100px;
 }
-
 </style>

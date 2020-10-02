@@ -1,14 +1,16 @@
 //主页
 <template>
-  <div id="app">
-    <BaseHeader></BaseHeader>
-    <BaseSidebar></BaseSidebar>
+  <div>
+    <Base-header></Base-header>
+    <Base-sidebar></Base-sidebar>
+    <Base-list v-bind:blogdata="this.items"></Base-list>
   </div>
 </template>
 
 <script>
-import BaseSidebar from "../common/BaseSidebar";
 import BaseHeader from "../common/BaseHeader";
+import BaseSidebar from "../common/BaseSidebar";
+import BaseList from "../common/BaseList";
 export default {
   name: "Home",
   created() {
@@ -17,7 +19,7 @@ export default {
       .then((res) => {
         console.log(res.data);
         this.items = res.data.data;
-        this.tagShow = res.data.status;
+        this.bowenShow = res.data.status;
       })
       .catch((err) => {
         console.log(err);
@@ -26,6 +28,13 @@ export default {
   components: {
     BaseSidebar,
     BaseHeader,
+    BaseList,
+  },
+  data() {
+    return {
+      items: "",
+      bowenShow: "",
+    };
   },
 };
 </script>

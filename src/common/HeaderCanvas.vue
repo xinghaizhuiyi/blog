@@ -112,5 +112,7 @@ export default {
 <style scoped>
 #HeaderCanvas {
   position: absolute;
+  width: 100%;
+  height: 100vh;
 }
 </style>

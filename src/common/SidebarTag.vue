@@ -1,6 +1,6 @@
 //侧边栏tag
 <template>
-  <div class="SidebarTag" v-if="tagShow">
+  <div class="SidebarTag" v-if="tagShow=='ok'">
     <span class="taghead">随笔分类</span>
     <ul>
       <li
