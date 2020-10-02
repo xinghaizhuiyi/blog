@@ -1,3 +1,4 @@
+//侧边栏小图标
 <template>
   <button class="SidebarIcon" @click='showClick'>
     <div class="flexbox">
@@ -28,7 +29,6 @@ export default {
   margin-top: 1em;
   border: 2px solid black;
   border-radius:12px;
-  z-index: 2;
 }
 
 .flexbox {

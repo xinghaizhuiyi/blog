@@ -1,3 +1,4 @@
+//侧边栏tag
 <template>
   <div class="SidebarTag" v-if="tagShow">
     <span class="taghead">随笔分类</span>
@@ -20,7 +21,7 @@ import SvgTag from "./svg/SvgTag";
 export default {
   created() {
     this.axios
-      .put("http://localhost:3000/tag")
+      .get("http://localhost:3000/tag")
       .then((res) => {
         console.log(res.data);
         this.items = res.data.data;

@@ -1,10 +1,11 @@
+//侧边栏
 <template>
-  <div class="Sidebarbox">
+  <div>
     <div class="Sidebar">
-      <nav></nav>
       <User-box></User-box>
       <Sidebar-off></Sidebar-off>
       <el-calendar v-model="value" class="Calendar"></el-calendar>
+      <Sidebar-search></Sidebar-search>
       <Sidebar-tag></Sidebar-tag>
     </div>
     <div class="Sidebarout" @click="showClick"></div>
@@ -14,6 +15,7 @@
 <script>
 import SidebarOff from "./SidebarOff";
 import UserBox from "./UserBox";
+import SidebarSearch from "./SidebarSearch";
 import SidebarTag from "./SidebarTag";
 export default {
   data() {
@@ -24,6 +26,7 @@ export default {
   components: {
     SidebarOff,
     UserBox,
+    SidebarSearch,
     SidebarTag,
   },
   methods: {
@@ -35,17 +38,14 @@ export default {
 </script>
 
 <style scoped>
-.Sidebarbox {
-  z-index: 2;
-}
-.Sidebarbox .Sidebar {
+.Sidebar {
   position: fixed;
   width: 250px;
   height: 100%;
   background-color: #DCDCDC;
   overflow: auto;
 }
-.Sidebarbox .Sidebarout {
+.Sidebarout {
   position: fixed;
   left: 250px;
   width: calc(100% - 250px);

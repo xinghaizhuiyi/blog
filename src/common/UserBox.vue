@@ -1,3 +1,4 @@
+//用户头像昵称
 <template>
   <div class="UserBox">
     <img src="../assets/base.jpg" alt="用户头像" class="UserImg" />
@@ -28,7 +29,8 @@ export default {
   border-radius: 100%;
 }
 .UserName {
-  color: white;
+  color: blue;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
   margin-top: 5px;
   text-align: center;
 }
