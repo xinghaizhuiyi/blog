@@ -13,18 +13,6 @@ import BaseSidebar from "../common/BaseSidebar";
 import BaseList from "../common/BaseList";
 export default {
   name: "Home",
-  created() {
-    this.axios
-      .get("http://localhost:3000/bowen")
-      .then((res) => {
-        console.log(res.data);
-        this.items = res.data.data;
-        this.bowenShow = res.data.status;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  },
   components: {
     BaseSidebar,
     BaseHeader,

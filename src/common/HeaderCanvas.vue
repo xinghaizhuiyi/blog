@@ -1,12 +1,19 @@
 //首屏的气泡效果
 <template>
-  <canvas id="HeaderCanvas"></canvas>
+  <div>
+    <canvas id="HeaderCanvas"></canvas>
+    <Header-down></Header-down>
+  </div>
 </template>
 
 <script>
+import HeaderDown from "../common/HeaderDown";
 let canvas;
 let ctx;
 export default {
+  components: {
+    HeaderDown,
+  },
   data() {
     return {
       blogname: "",
@@ -114,5 +121,6 @@ export default {
   position: absolute;
   width: 100%;
   height: 100vh;
+  z-index: 2;
 }
 </style>

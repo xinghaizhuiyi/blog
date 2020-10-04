@@ -1,8 +1,8 @@
 //首页的首屏
 <template>
   <div class="HeaderBox">
-    <Background></Background>
     <Header-canvas></Header-canvas>
+    <Background></Background>
   </div>
 </template>
 
@@ -14,12 +14,11 @@ export default {
     Background,
     HeaderCanvas,
   },
-  computed: {},
+  computed: {
+  },
+  
 };
 </script>
 
 <style scoped>
-.HeaderBox {
-  z-index: 2;
-}
 </style>

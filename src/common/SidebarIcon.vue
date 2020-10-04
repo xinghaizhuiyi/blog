@@ -29,6 +29,7 @@ export default {
   margin-top: 1em;
   border: 2px solid black;
   border-radius:12px;
+  z-index: 3;
 }
 
 .flexbox {

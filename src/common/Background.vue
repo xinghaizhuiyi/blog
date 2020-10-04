@@ -1,20 +1,11 @@
 //BaseHeader的背景
 <template>
   <div class="Background">
-      <Header-down></Header-down>
   </div>
 </template>
 
 <script>
-
-import HeaderDown from "../common/HeaderDown"
 export default {
-  components: {
-    HeaderDown
-  },
-  computed: {
-
-  },
 };
 </script>
 
@@ -24,5 +15,6 @@ export default {
     height: 100vh;
     background-color: rgb(34,34,34);
     position: absolute;
+    z-index: 1;
 }
 </style>

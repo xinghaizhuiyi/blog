@@ -44,6 +44,7 @@ export default {
   height: 100%;
   background-color: #DCDCDC;
   overflow: auto;
+  z-index: 3;
 }
 .Sidebarout {
   position: fixed;
@@ -51,6 +52,7 @@ export default {
   width: calc(100% - 250px);
   height: 100%;
   opacity: 0.2;
+  z-index: 3;
 }
 </style>
 <style>
