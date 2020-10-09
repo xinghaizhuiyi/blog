@@ -23,7 +23,6 @@ export default {
     this.axios
       .get("http://localhost:3000/tag")
       .then((res) => {
-        console.log(res.data);
         this.items = res.data.data;
         this.tagShow = res.data.status;
       })

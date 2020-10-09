@@ -103,13 +103,13 @@ export default {
       if (flag == 1) {
         //初次绘制
         timer;
+        this.$store.state.Timer.timer = timer;
       }
       if (flag == 0) {
         //重绘清空定时器
-        for (let i = timer - 1; i > 0; i--) {
-          clearInterval(i);
-        }
+        clearInterval(this.$store.state.Timer.timer);
         timer;
+        this.$store.state.Timer.timer = timer;
       }
     },
   },

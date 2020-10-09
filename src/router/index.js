@@ -20,7 +20,7 @@ export default function createRouter() {
                 component: tag
             },
             {
-                path: '/blog/:bowen',
+                path: '/Blog/:bowenname',
                 name: 'Blog',
                 component: Blog
             },

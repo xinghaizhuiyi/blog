@@ -3,7 +3,7 @@
   <div>
     <Base-header></Base-header>
     <Base-sidebar></Base-sidebar>
-    <Base-list v-bind:blogdata="this.items"></Base-list>
+    <Base-list></Base-list>
   </div>
 </template>
 

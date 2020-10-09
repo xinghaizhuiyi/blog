@@ -2,8 +2,10 @@
 <template>
   <div id="BaseList">
     <div class="BlogBox">
-      <div v-for="item in blogdata" :key="item.blogname" class="Blog">
-        <div class="blogname">{{ item.blogname }}</div>
+      <div v-for="item in blogdata" :key="item.bowenname" class="Blog">
+        <p class="bowenname" @click="toBowen(item.bowenname)">
+          {{ item.bowenname }}
+        </p>
         <div class="introduction">简介：{{ item.introduction }}</div>
         <div class="tag">{{ item.tag }}<svg-tag></svg-tag></div>
       </div>
@@ -27,11 +29,12 @@ export default {
     return {
       blogdata: this.blogdata,
       count: 0,
+      bowenname:""
     };
   },
   created() {
     this.axios
-      .get("http://localhost:3000/bowen")
+      .get("http://localhost:3000/pagination/1")
       .then((res) => {
         this.blogdata = res.data.data.rows;
         this.count = res.data.data.count;
@@ -40,20 +43,22 @@ export default {
         console.log(err);
       });
   },
-  mounted() {
-    const BaseList = document.getElementById("BaseList");
-    BaseList.style.marginTop = window.innerHeight + "px";
-  },
   methods: {
     currentPageChange(val) {
       this.axios
-      .get("http://localhost:3000/bowen/"+val)
-      .then((res) => {
-        this.blogdata = res.data.data.rows;
-        this.count = res.data.data.count;
-      })
-      .catch((err) => {
-        console.log(err);
+        .get("http://localhost:3000/pagination/" + val)
+        .then((res) => {
+          this.blogdata = res.data.data.rows;
+          this.count = res.data.data.count;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    toBowen(bowenname) {
+      this.$router.push({
+        name: "Blog",
+        params: { bowenname },
       });
     },
   },
@@ -62,7 +67,6 @@ export default {
 
 <style scoped>
 #BaseList {
-  position: absolute;
   width: 100%;
   z-index: 0;
 }
@@ -70,7 +74,8 @@ export default {
   overflow: hidden;
   margin: 0 auto;
   width: 60%;
-  box-shadow: 0 0 20px 10px rgba(220, 220, 220, 0.3);
+  box-shadow: 0 20px 20px 10px rgba(220, 220, 220, 0.3);
+  z-index: 0;
 }
 .Blog {
   margin: 30px auto;
@@ -84,10 +89,13 @@ export default {
   border-radius: 100%;
   box-shadow: rgba(255, 255, 255, 0.7) 0 0 0 5px;
 }
-.blogname {
+.bowenname {
   font-size: 24px;
   font-weight: bold;
   padding-left: 1em;
+}
+.bowenname:hover{
+  cursor: pointer;
 }
 .introduction {
   margin: 10px auto;

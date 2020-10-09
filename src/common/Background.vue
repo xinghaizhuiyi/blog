@@ -14,7 +14,6 @@ export default {
     width: 100%;
     height: 100vh;
     background-color: rgb(34,34,34);
-    position: absolute;
     z-index: 1;
 }
 </style>

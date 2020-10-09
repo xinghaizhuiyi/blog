@@ -1,6 +1,6 @@
 //侧边栏及小图标组件
 <template>
-  <div>
+  <div class="BaseSidebar">
     <Sidebar-icon v-if="isshow"></Sidebar-icon>
     <Sidebar v-if="!isshow"></Sidebar>
   </div>
@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style scoped>
+.BaseSidebar{
+  z-index: 3;
+}
 </style>

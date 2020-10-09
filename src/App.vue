@@ -1,5 +1,5 @@
 <template>
-  <div id="app" onselectstart="return false;">
+  <div id="app" >
     <router-view></router-view>
   </div>
 </template>

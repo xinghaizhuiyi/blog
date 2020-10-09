@@ -40,6 +40,7 @@ export default {
 <style scoped>
 .Sidebar {
   position: fixed;
+  top: 0;
   width: 250px;
   height: 100%;
   background-color: #DCDCDC;
@@ -48,9 +49,11 @@ export default {
 }
 .Sidebarout {
   position: fixed;
+  top: 0;
   left: 250px;
   width: calc(100% - 250px);
   height: 100%;
+  background-color:#F8F8FF;
   opacity: 0.2;
   z-index: 3;
 }

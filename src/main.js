@@ -21,8 +21,16 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false
 Vue.config.devtools = true
 
-const router = createRouter()
 const store = createStore()
+const router = createRouter()
+router.beforeEach(function (to, from, next) {
+  if (store.state.Timer.timer != 0) {
+    clearInterval(store.state.Timer.timer)
+  }
+
+  next()
+})
+
 
 new Vue({
   el: '#app',
