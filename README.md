@@ -1,9 +1,13 @@
 # 个人博客
 
-**首屏
-![](https://github.com/xinghaizhuiyi/blog/blob/master/src/assets/home.png)
-Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面，Markdown文件的后缀名便是“.md”
+## 首屏
+![首屏](https://github.com/xinghaizhuiyi/blog/blob/master/src/assets/home.png)
 
+使用了canvas绘制的动态气泡效果，下方的箭头点击可以直接下拉到博客列表，左上角的按钮可以打开侧边栏
+
+## 侧边栏
+![侧边栏](https://github.com/xinghaizhuiyi/blog/blob/master/src/assets/sidebar.png)
+侧边栏包括日历，搜索栏（支持模糊查询），tag栏（点击tag可以进入tag界面，查看相关的文章）
 
 ## MdEditor是一个在线编辑Markdown文档的编辑器
 
