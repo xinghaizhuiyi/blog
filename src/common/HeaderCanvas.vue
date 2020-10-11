@@ -84,7 +84,7 @@ export default {
             }
             reX = ballK[i] * speed[i] + ballY[i];//曲线运动的X轴，实际的Y轴
             reY = Math.sin(ballK[i]) * ballF[i] + ballX[i];//曲线运动的Y轴，实际的X轴，通过振幅计算左右偏移量
-            if (reX + ballR[i] <= 0) {//到达顶部后重置
+            if (reX + 2*ballR[i] <= 0) {//到达顶部后重置
               ballY[i] = canvas.height;
               ballK[i] = 0;
               reX = ballK[i] * speed[i] + ballY[i];
