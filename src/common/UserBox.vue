@@ -1,7 +1,7 @@
 //用户头像昵称
 <template>
   <div class="UserBox">
-    <img src="../assets/base.jpg" alt="用户头像" class="UserImg" />
+    <img src="../assets/base.jpg" alt="用户头像" class="UserImg" @click="goHome()" />
     <div class="UserName">
       <p>星海追忆</p>
     </div>
@@ -13,6 +13,11 @@ export default {
   methods: {
     showClick() {
       this.$store.commit("sidebarshow");
+    },
+    goHome() {
+      this.$router.push({
+        name: "Home",
+      });
     },
   },
 };
