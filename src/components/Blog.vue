@@ -12,35 +12,56 @@
         :scrollStyle="prop.scrollStyle"
       ></mavon-editor>
     </div>
-    <a @click="changeHash('#欢迎使用Markdown在线编辑器MdEditor')">123</a>
+    <index :list="this.header"></index>
   </div>
 </template>
 
 <script>
 import BaseSidebar from "../common/BaseSidebar";
+import index from "../common/index";
 export default {
   name: "Blog",
   created() {
     this.axios
       .get("http://localhost:3000/bowen/" + this.$route.params.bowenname)
       .then((res) => {
-        this.bowen = res.data.data[0].bowen;
+        this.bowen = res.data.data[0].bowen
         this.$nextTick(() => {
           let head = [].slice.call(document.querySelectorAll("h1,h2,h3"));
-          let i = 0;
+          let i = 0
+          let keyone = 0,keytwo=0,keythree=1
           while (head[i] != undefined) {
-            let unit = {};
-            unit.localName = head[i].localName;
-            unit.innerText = head[i].innerText;
-            head[i].setAttribute("id", head[i].innerText.replace(/\s*/g,""));
-            this.header.push(unit);
-            i++;
+            if(head[i].innerText.replace(/\s*/g, "")==head[0].innerText.replace(/\s*/g, "")&&i!=0){
+              break
+            }
+            let unit = {}
+            unit.localName = head[i].localName
+            unit.innerText = head[i].innerText.replace(/\s*/g, "")
+            unit.key = i
+            if (head[i].localName == "h1") {
+              keyone++
+              unit.headerkey = keyone
+              keytwo=1
+            }
+            if (head[i].localName == "h2") {
+              keytwo++
+              unit.headerkey = keyone+"."+keytwo
+              
+              keythree=1
+            }
+            if (head[i].localName == "h3") {
+              unit.headerkey = keyone+"."+keytwo+"."+keythree
+              keythree++
+            }
+            head[i].setAttribute("id", head[i].innerText.replace(/\s*/g, ""))
+            this.header.push(unit)
+            i++
           }
-        });
+        })
       })
       .catch((err) => {
         console.log(err);
-      });
+      })
   },
   computed: {
     prop() {
@@ -54,11 +75,6 @@ export default {
       return data;
     },
   },
-  methods: {
-    changeHash: function (idName) {
-      document.querySelector(idName).scrollIntoView(true)
-      }
-  },
   data() {
     return {
       bowen: "",
@@ -67,6 +83,7 @@ export default {
   },
   components: {
     BaseSidebar,
+    index,
   },
 };
 </script>
