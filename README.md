@@ -2,8 +2,30 @@
 
 ## 目录结构
 
-```123
-123
+```
+- assets // 存放静态资源，主要是图片
+    -imgs
+    　　css.png // CSS文章背景图
+　　　　 ...
+- common // 存放组件
+    -SVG // 存放VUE图标组件
+        SvgDown.vue // "向下"按钮
+        SVGLeft.vue // "收起"按钮
+        ...
+    BaseSidebar.vue // 侧边栏组件
+    BaseList.vue // 文章列表组件
+    ...
+- components // 存放页面组件
+    Blog.vue // 文章界面组件
+    Home.vue // 首页组件
+    tag.vue // tag界面组件       
+    ...
+- router // 存放路由
+    index.js 
+- store // 存放vuex
+    -modules // 存放Vuex的模块
+        Timer.vue // 计时器
+    index.js
 ```
 ## 首屏
 ![首屏](https://github.com/xinghaizhuiyi/blog/blob/master/src/assets/home.png)
