@@ -1,5 +1,10 @@
 # 个人博客
 
+## 目录结构
+
+```123
+123
+```
 ## 首屏
 ![首屏](https://github.com/xinghaizhuiyi/blog/blob/master/src/assets/home.png)
 
